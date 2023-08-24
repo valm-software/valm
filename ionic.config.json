@@ -1,0 +1,8 @@
+{
+  "name": "VALM",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "3548c528"
+}
