@@ -16,6 +16,123 @@
 
   <div id="container">
     <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI
+        Components</a></p>
+
+    <br>
+
+    <h1>Ionic</h1>
+
+    <ion-button>Default</ion-button>
+    <ion-button color="primary">Primary</ion-button>
+    <ion-button color="secondary">Secondary</ion-button>
+    <ion-button color="tertiary">Tertiary</ion-button>
+    <ion-button color="success">Success</ion-button>
+    <ion-button color="warning">Warning</ion-button>
+    <ion-button color="danger">Danger</ion-button>
+    <ion-button color="light">Light</ion-button>
+    <ion-button color="medium">Medium</ion-button>
+    <ion-button color="dark">Dark</ion-button>
+    <br>
+    <ion-button>Default</ion-button> <ion-button [disabled]="true">Disabled</ion-button>
+
+    <br>
+    <ion-button color="dark">
+      <!-- <ion-icon name="logo-ionic" size="large" color="primary"></ion-icon> -->
+      <ion-icon name="battery-charging-outline" color="danger"></ion-icon>
+      Left Icon
+    </ion-button>
+    
+    <ion-button>
+      Right Icon
+      <ion-icon slot="end" name="star"></ion-icon>
+    </ion-button>
+    
+    <ion-button>
+      <ion-icon slot="icon-only" name="star"></ion-icon>
+    </ion-button>
+
+    <br>
+    <br>
+
+    <h1>Material </h1>
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+
+    <h3>Extended Fab</h3>
+    <div class="example-button-row">
+      <button mat-fab extended color="primary">
+        <mat-icon>favorite</mat-icon>
+        Primary
+      </button>
+      <button mat-fab extended color="accent">
+        <mat-icon>favorite</mat-icon>
+        Accent
+      </button>
+      <button mat-fab extended color="warn">
+        <mat-icon>favorite</mat-icon>
+        Warn
+      </button>
+      <button mat-fab extended disabled>
+        <mat-icon>favorite</mat-icon>
+        Disabled
+      </button>
+      <a mat-fab extended routerLink=".">
+        <mat-icon>favorite</mat-icon>
+        Link
+      </a>
+    </div>
+
+    <br>
+
+    <h1>PrimeNG</h1>
+
+    <p-button icon="pi pi-check"></p-button>
+    <p-button icon="pi pi-bookmark" styleClass="p-button-secondary"></p-button>
+    <p-button icon="pi pi-search" styleClass="p-button-success"></p-button>
+    <p-button icon="pi pi-user" styleClass="p-button-info"></p-button>
+    <p-button icon="pi pi-bell" styleClass="p-button-warning"></p-button>
+    <p-button icon="pi pi-heart" styleClass="p-button-help"></p-button>
+    <p-button icon="pi pi-times" styleClass="p-button-danger"></p-button>
+    <br>
+    <br>
+    <p-button label="Primary" styleClass="p-button-rounded"></p-button>
+    <p-button label="Secondary" styleClass="p-button-rounded p-button-secondary"></p-button>
+    <p-button label="Success" styleClass="p-button-rounded p-button-success"></p-button>
+    <p-button label="Info" styleClass="p-button-rounded p-button-info"></p-button>
+    <p-button label="Warning" styleClass="p-button-rounded p-button-warning"></p-button>
+    <p-button label="Help" styleClass="p-button-rounded p-button-help"></p-button>
+    <p-button label="Danger" styleClass="p-button-rounded p-button-danger"></p-button>
+
+    <br>
+    <br>
+
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="auto">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><p-checkbox [(ngModel)]="checkbox1" [binary]="true"></p-checkbox></span>
+            <input type="text" pInputText placeholder="Username" />
+          </div>
+
+        </ion-col>
+        <ion-col size="auto">
+          <div class="p-inputgroup">
+            <input type="text" pInputText placeholder="Price" />
+            <span class="p-inputgroup-addon"><p-radioButton name="category" value="price"
+                [(ngModel)]="category"></p-radioButton></span>
+          </div>
+
+        </ion-col>
+        <ion-col size="auto">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><p-checkbox [(ngModel)]="checkbox2" [binary]="true"></p-checkbox></span>
+            <input type="text" pInputText placeholder="Website" />
+            <span class="p-inputgroup-addon"><p-radioButton name="category" value="site"
+                [(ngModel)]="category"></p-radioButton></span>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>

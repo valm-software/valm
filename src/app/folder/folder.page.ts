@@ -14,4 +14,10 @@ export class FolderPage implements OnInit {
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
   }
+  checkbox1: boolean = false;
+
+  checkbox2: boolean = false;
+
+  category: string | undefined;
+  
 }
