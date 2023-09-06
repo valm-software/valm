@@ -23,19 +23,14 @@
 
     <h1>Ionic</h1>
 
-    <ion-button>Default</ion-button>
+ 
     <ion-button color="primary">Primary</ion-button>
-    <ion-button color="secondary">Secondary</ion-button>
     <ion-button color="tertiary">Tertiary</ion-button>
     <ion-button color="success">Success</ion-button>
     <ion-button color="warning">Warning</ion-button>
     <ion-button color="danger">Danger</ion-button>
-    <ion-button color="light">Light</ion-button>
     <ion-button color="medium">Medium</ion-button>
     <ion-button color="dark">Dark</ion-button>
-    <br>
-    <ion-button>Default</ion-button> <ion-button [disabled]="true">Disabled</ion-button>
-
     <br>
     <ion-button color="dark">
       <!-- <ion-icon name="logo-ionic" size="large" color="primary"></ion-icon> -->
@@ -86,15 +81,6 @@
 
     <h1>PrimeNG</h1>
 
-    <p-button icon="pi pi-check"></p-button>
-    <p-button icon="pi pi-bookmark" styleClass="p-button-secondary"></p-button>
-    <p-button icon="pi pi-search" styleClass="p-button-success"></p-button>
-    <p-button icon="pi pi-user" styleClass="p-button-info"></p-button>
-    <p-button icon="pi pi-bell" styleClass="p-button-warning"></p-button>
-    <p-button icon="pi pi-heart" styleClass="p-button-help"></p-button>
-    <p-button icon="pi pi-times" styleClass="p-button-danger"></p-button>
-    <br>
-    <br>
     <p-button label="Primary" styleClass="p-button-rounded"></p-button>
     <p-button label="Secondary" styleClass="p-button-rounded p-button-secondary"></p-button>
     <p-button label="Success" styleClass="p-button-rounded p-button-success"></p-button>
@@ -106,33 +92,5 @@
     <br>
     <br>
 
-
-    <ion-grid>
-      <ion-row>
-        <ion-col size="auto">
-          <div class="p-inputgroup">
-            <span class="p-inputgroup-addon"><p-checkbox [(ngModel)]="checkbox1" [binary]="true"></p-checkbox></span>
-            <input type="text" pInputText placeholder="Username" />
-          </div>
-
-        </ion-col>
-        <ion-col size="auto">
-          <div class="p-inputgroup">
-            <input type="text" pInputText placeholder="Price" />
-            <span class="p-inputgroup-addon"><p-radioButton name="category" value="price"
-                [(ngModel)]="category"></p-radioButton></span>
-          </div>
-
-        </ion-col>
-        <ion-col size="auto">
-          <div class="p-inputgroup">
-            <span class="p-inputgroup-addon"><p-checkbox [(ngModel)]="checkbox2" [binary]="true"></p-checkbox></span>
-            <input type="text" pInputText placeholder="Website" />
-            <span class="p-inputgroup-addon"><p-radioButton name="category" value="site"
-                [(ngModel)]="category"></p-radioButton></span>
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
   </div>
 </ion-content>
