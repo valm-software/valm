@@ -9,8 +9,8 @@ import { FolderPageRoutingModule } from './folder-routing.module';
 import { FolderPage } from './folder.page';
 
 
-import { MaterialModule } from '../material/material.module'
-import { PrimengModule } from '../primeng/primeng.module';
+import { MaterialModule } from 'src/app/library/material/material.module'
+import { PrimengModule } from 'src/app/library//primeng/primeng.module';
 
 @NgModule({
   imports: [

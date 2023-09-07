@@ -7,8 +7,8 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material/material.module'
-import { PrimengModule } from './primeng/primeng.module';
+import { MaterialModule } from 'src/app/library/material/material.module'
+import { PrimengModule } from 'src/app/library/primeng/primeng.module';
 
 @NgModule({
   declarations: [AppComponent],
