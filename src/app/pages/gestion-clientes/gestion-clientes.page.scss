@@ -1,0 +1,45 @@
+/* Agrega flex-wrap a .ion-row para permitir el ajuste de elementos a la siguiente fila */
+.ion-row {
+    flex-wrap: wrap;
+  }
+  
+  /* Establece el tamaño mínimo del botón */
+.custom-button {
+    min-width: 188px; /* Tamaño mínimo del botón */
+    width: 100%; /* Ocupa todo el ancho de la columna */
+    height: 188px;
+    // border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.5em; /* Agrega espacio interno al botón utilizando padding */
+    overflow: hidden; /* Oculta el contenido que excede la altura máxima */
+  }
+  
+  /* Estilo del contenido del botón */
+  .button-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Estilo del icono */
+  ion-icon {
+    // font-size: 48px; /* Ajusta el tamaño del icono según tu preferencia */
+    font-size: 7em; /* Utiliza em para el tamaño del icono */
+  }
+  
+  /* Estilo del texto debajo del icono */
+  ion-label {
+    margin-top: 0.5em; /* Espaciado entre el icono y el texto */
+    font-size: 1em; /* Utiliza em para el tamaño del texto */
+    white-space: nowrap; /* Evita el ajuste de línea en el texto */
+    overflow: hidden; /* Oculta el texto que excede la altura máxima del botón */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos (...) al final del texto truncado */
+
+  }
+
+
+

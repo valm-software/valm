@@ -10,9 +10,45 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Gestión de Clientes</ion-title>
+      <ion-title>Gestión de Clientes</ion-title>
     </ion-toolbar>
   </ion-header>
 
+    <ion-content>
+
+      <ion-grid>
+        <ion-row>
+          <!-- 1 columna en pantallas pequeñas (tamaño por defecto) -->
+          <ion-col size="12" size-md="12" size-lg="6">
+            <ion-button class="custom-button">
+              <div class="button-content">
+                <ion-icon [ios]="'people-outline'" [md]="'people-sharp'"></ion-icon>
+                <ion-label>
+                  CRUD Cliente
+                </ion-label>
+              </div>
+            </ion-button>
+          </ion-col>
+      
+          <!-- 2 columnas en pantallas medianas (size-md) -->
+          <ion-col size="12" size-md="12" size-lg="6">
+            <ion-button class="custom-button">
+              <div class="button-content">
+                <ion-icon [ios]="'reader-outline'" [md]="'reader-sharp'"></ion-icon>
+                <ion-label>
+                  Informes Clientes
+                </ion-label>
+              </div>
+            </ion-button>
+          </ion-col>     
+
+        </ion-row>
+        
+      </ion-grid>
+      
+      
+    </ion-content>
+
 
 </ion-content>
+

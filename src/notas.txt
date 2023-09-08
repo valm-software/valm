@@ -1,0 +1,66 @@
+      <ion-grid>
+        <ion-row>
+          <!-- Pantallas grandes: 6 columnas (size-lg="2") -->
+          <ion-col size-lg="2">
+            <ion-button class="custom-button">
+              <div class="button-content">
+                <ion-icon name="people-outline"></ion-icon>
+                <ion-label>
+                  Nuevo Cliente
+                </ion-label>
+              </div>
+            </ion-button>
+          </ion-col>
+          <ion-col size-lg="2">
+            <ion-button class="custom-button">
+              <div class="button-content">
+                <ion-icon name="people-outline"></ion-icon>
+                <ion-label>
+                  Nuevo Cliente
+                </ion-label>
+              </div>
+            </ion-button>
+          </ion-col>
+          <ion-col size-lg="2">
+            <ion-button class="custom-button">
+              <div class="button-content">
+                <ion-icon name="people-outline"></ion-icon>
+                <ion-label>
+                  Nuevo Cliente
+                </ion-label>
+              </div>
+            </ion-button>
+          </ion-col>
+          <ion-col size-lg="2">
+            <ion-button class="custom-button">
+              <div class="button-content">
+                <ion-icon name="people-outline"></ion-icon>
+                <ion-label>
+                  Nuevo Cliente
+                </ion-label>
+              </div>
+            </ion-button>
+          </ion-col>
+          <ion-col size-lg="2">
+            <ion-button class="custom-button">
+              <div class="button-content">
+                <ion-icon name="people-outline"></ion-icon>
+                <ion-label>
+                  Nuevo Cliente
+                </ion-label>
+              </div>
+            </ion-button>
+          </ion-col>
+          <ion-col size-lg="2">
+            <ion-button class="custom-button">
+              <div class="button-content">
+                <ion-icon name="people-outline"></ion-icon>
+                <ion-label>
+                  Nuevo Cliente
+                </ion-label>
+              </div>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
