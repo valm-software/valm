@@ -34,7 +34,7 @@ const routes: Routes = [
   {
     path: 'gestion-repartos',
     loadChildren: () => import('./pages/gestion-repartos/gestion-repartos.module').then( m => m.GestionRepartosPageModule)
-  }
+  },
 
 ];
 
