@@ -7,35 +7,18 @@ const routes: Routes = [
     redirectTo: 'inicio',
     pathMatch: 'full'
   },
-  // {
-  //   path: 'folder/:id',
-  //   loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  // },
   {
     path: 'inicio',
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
-    path: 'gestion-clientes',
-    loadChildren: () => import('./pages/gestion-clientes/gestion-clientes.module').then( m => m.GestionClientesPageModule)
+    path: 'catalog',
+    loadChildren: () => import('./pages/catalog/catalog.module').then( m => m.CatalogPageModule)
   },
   {
-    path: 'gestion-ventas',
-    loadChildren: () => import('./pages/gestion-ventas/gestion-ventas.module').then( m => m.GestionVentasPageModule)
-  },
-  {
-    path: 'gestion-cobros',
-    loadChildren: () => import('./pages/gestion-cobros/gestion-cobros.module').then( m => m.GestionCobrosPageModule)
-  },
-  {
-    path: 'gestion-inventarios',
-    loadChildren: () => import('./pages/gestion-inventarios/gestion-inventarios.module').then( m => m.GestionInventariosPageModule)
-  },
-  {
-    path: 'gestion-repartos',
-    loadChildren: () => import('./pages/gestion-repartos/gestion-repartos.module').then( m => m.GestionRepartosPageModule)
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   }
-
 ];
 
 @NgModule({

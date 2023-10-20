@@ -1,0 +1,23 @@
+ <ion-content class="ion-padding">
+  <ion-card class="login-card">
+    <ion-card-header>
+      <ion-img src="assets/icon.png"></ion-img> <!-- Añade la ruta a tu logo aquí -->
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+        <ion-item>
+          <ion-label position="floating">Username</ion-label>
+          <ion-input formControlName="username" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+        <ion-button type="submit" [disabled]="!loginForm.valid" expand="block">Login</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+

@@ -7,18 +7,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './library/material/material.module'
 import { PrimengModule } from './library/primeng/primeng.module';
-import { GestionInventariosPageModule } from './pages/gestion-inventarios/gestion-inventarios.module';
+import { HttpClientModule } from '@angular/common/http'; // 2. Importa HttpClientModule
+
+import { MenuComponent } from './components/menu/menu.component';  // ajusta la ruta según donde esté tu componente
+import { ReactiveFormsModule } from '@angular/forms'; // Importa esto
 
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, 
-            IonicModule.forRoot(), 
-            AppRoutingModule, 
-            BrowserAnimationsModule, 
-            MaterialModule, 
+  declarations: [AppComponent,MenuComponent],
+  imports: [BrowserModule,
+            IonicModule.forRoot(),
+            AppRoutingModule,
+            BrowserAnimationsModule,
+            MaterialModule,
             PrimengModule,
-            GestionInventariosPageModule
+            ReactiveFormsModule,
+            HttpClientModule
           ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
