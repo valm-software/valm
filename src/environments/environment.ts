@@ -16,8 +16,8 @@
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
 export const environment = {
   production: false,
-  // apiUrl: 'https://valm.fortiddns.com:4430/api'
-  apiUrl: 'http://127.0.0.1:5002',
-  apiUrl2: 'http://127.0.0.1:5002'
+  apiUrl: 'https://valm.fortiddns.com:8546'
+  // apiUrl: 'http://127.0.0.1:5002',
+  // apiUrl2: 'http://127.0.0.1:5001'
 
 };

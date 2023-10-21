@@ -2,8 +2,7 @@
 //   production: true
 // };
 
-
 export const environment = {
   production: true,
-  apiUrl: 'https://valm.fortiddns.com:4430/api'
+  apiUrl: 'https://valm.fortiddns.com:8546'
 };

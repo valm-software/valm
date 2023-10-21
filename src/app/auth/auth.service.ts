@@ -3,6 +3,9 @@ import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,31 +25,17 @@ export class AuthService {
    */
 
   setUserData(data: any): void {
-    console.log('setUserData is called with:', data);
-    if (data && data && data.menu) {
-      this.userData = data;
-      console.log('userData after assignment:', this.userData);
-      this.userMenu$.next(data.menu);  // Actualizamos el BehaviorSubject con el nuevo menú
+    // console.log('setUserData is called with:', data);
+    // Accediendo a 'userData' antes de buscar 'menu'
+    const userData = data.userData ? data.userData : data;
+    if (userData && userData.menu) {
+      this.userData = userData;
+      // console.log('userData after assignment:', this.userData);
+      this.userMenu$.next(userData.menu);  // Actualizamos el BehaviorSubject con el nuevo menú
     } else {
       console.error("Datos no válidos:", data);
     }
   }
-
-
-
-
-  // setUserData(data: any): void {
-  //   if (!data) {
-  //     console.error('Data is null or undefined');
-  //     return;
-  //   }
-  //   console.log('setUserData is called with:', data);
-  //   this.userData = data;
-  //   console.log('userData after assignment:', this.userData);
-  //   this.userMenu$.next(data.menu);
-  // }
-
-
 
 
   /**
@@ -90,4 +79,31 @@ export class AuthService {
       }
     );
   }
+
+
+  checkSession(): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/auth/check_session`, { withCredentials: true }).pipe(
+      map((response: any) => {
+        if (response.status === 'authenticated') {
+          this.setUserData(response.data);
+        } else {
+          this.clearUserData();
+        }
+        return response;
+      }),
+      catchError((error) => {
+        if (error.status === 401) {
+          // No autenticado, manejar aquí
+          this.clearUserData();
+          return of({status: 'not_authenticated'}); // of es un operador de RxJS que crea un nuevo Observable
+        } else {
+          // Otro tipo de error, re-lanzarlo
+          console.error('Error al verificar la sesión:', error);
+          throw error;
+        }
+      })
+    );
+  }
+
+
 }

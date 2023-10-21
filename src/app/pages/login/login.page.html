@@ -18,7 +18,7 @@
         <ion-card-title >Iniciar Sesión</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <!-- <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+        <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
           <ion-item>
             <ion-label position="floating">Usuario</ion-label>
             <ion-input formControlName="username"></ion-input>
@@ -28,8 +28,8 @@
             <ion-input formControlName="password" type="password"></ion-input>
           </ion-item>
           <ion-button type="submit" expand="block" [disabled]="!loginForm.valid">Ingresar</ion-button>
-        </form> -->
-        <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+        </form>
+        <!-- <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
           <ion-item>
             <ion-input aria-label="Usuario" formControlName="username"></ion-input>
           </ion-item>
@@ -37,7 +37,7 @@
             <ion-input aria-label="Contraseña" formControlName="password" type="password"></ion-input>
           </ion-item>
           <ion-button type="submit" expand="block" [disabled]="!loginForm.valid">Ingresar</ion-button>
-        </form>
+        </form> -->
 
       </ion-card-content>
       <ion-ripple-effect></ion-ripple-effect>

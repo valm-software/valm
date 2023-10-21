@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth/auth.service'; // Asegúrate de importar el servicio
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginPage implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private router: Router,
-    private authService: AuthService // Inyecta el AuthService aquí
+    private authService: AuthService, // Inyecta el AuthService aquí
+    private notificationService: NotificationService
 
   ) {
     this.loginForm = this.formBuilder.group({
@@ -37,25 +39,48 @@ export class LoginPage implements OnInit {
       const loginData = this.loginForm.value;
       this.http.post(`${this.apiUri}/auth/login`, loginData).subscribe(
         (response: any) => {
-          console.log('Response from server:', response);
           if (response?.status === 'success') {
-            // Usa el AuthService para guardar la información del usuario
             this.authService.setUserData(response.data);
-            console.log("Datos del usuario: ", this.authService.getUserData()); // imprime los datos del usuario
-
-            // Redirigir al usuario a la página principal o donde desees
+            this.notificationService.presentToast('Inicio de sesión exitoso', 'success', 3000, [
+              {
+                text: 'Ok',
+                role: 'cancel',
+                handler: () => {
+                  console.log('Ok clicado');
+                }
+              }
+            ], ['custom-toast']);
             this.router.navigate(['/inicio']);
           } else {
-            // Manejo de errores
-            console.error('Error en el login:', response.message);
+            this.notificationService.presentToast('Error en el login: ' + response.message, 'danger', 3000, [
+              {
+                text: 'Cerrar',
+                role: 'cancel',
+                handler: () => {
+                  console.log('Cerrar clicado');
+                }
+              }
+            ], ['custom-toast']);
           }
         },
         (error) => {
-          console.error('Error HTTP:', error);
+          this.notificationService.presentToast('usuario o contraseña incorrecto', 'danger', 3000, [
+            {
+              text: 'Cerrar',
+              role: 'cancel',
+              handler: () => {
+                console.log('Cerrar clicado');
+              }
+            }
+          ], ['custom-toast']);
         }
       );
+    } else {
+      this.notificationService.presentToast('Formulario no válido', 'warning');
     }
   }
+
+
 }
 
 
