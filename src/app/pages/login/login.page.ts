@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
+import { AuthService } from '../../auth/auth.service'; // Asegúrate de importar el servicio
 
 @Component({
   selector: 'app-login',
@@ -16,12 +17,15 @@ export class LoginPage implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private authService: AuthService // Inyecta el AuthService aquí
+
   ) {
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(4)]],
       password: ['', [Validators.required, Validators.minLength(4)]],
     });
+
   }
 
   ngOnInit() {
@@ -33,9 +37,12 @@ export class LoginPage implements OnInit {
       const loginData = this.loginForm.value;
       this.http.post(`${this.apiUri}/auth/login`, loginData).subscribe(
         (response: any) => {
+          console.log('Response from server:', response);
           if (response?.status === 'success') {
-            // Aquí podrías guardar la estructura del menú en algún almacenamiento local o en un servicio
-            // Por ejemplo: localStorage.setItem('menu', JSON.stringify(response.data.menu));
+            // Usa el AuthService para guardar la información del usuario
+            this.authService.setUserData(response.data);
+            console.log("Datos del usuario: ", this.authService.getUserData()); // imprime los datos del usuario
+
             // Redirigir al usuario a la página principal o donde desees
             this.router.navigate(['/inicio']);
           } else {
@@ -50,3 +57,7 @@ export class LoginPage implements OnInit {
     }
   }
 }
+
+
+
+// Si optas por la tercera opción, asegúrate de llamar a getUserData() después de haber llamado a setUserData(), para que puedas ver los datos actualizados.

@@ -1,23 +1,50 @@
- <ion-content class="ion-padding">
-  <ion-card class="login-card">
-    <ion-card-header>
-      <ion-img src="assets/icon.png"></ion-img> <!-- Añade la ruta a tu logo aquí -->
-    </ion-card-header>
-    <ion-card-content>
-      <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
-        <ion-item>
-          <ion-label position="floating">Username</ion-label>
-          <ion-input formControlName="username" type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Password</ion-label>
-          <ion-input formControlName="password" type="password"></ion-input>
-        </ion-item>
-        <ion-button type="submit" [disabled]="!loginForm.valid" expand="block">Login</ion-button>
-      </form>
-    </ion-card-content>
-  </ion-card>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <div class="login-container">
+    <div class="logo-container">
+      <img src="assets/icon.png" alt="Logo de la aplicación" class="logo">
+    </div>
+    <ion-card class="login-card ion-activatable ripple-parent">
+      <ion-card-header class="text-center">
+        <ion-card-title >Iniciar Sesión</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <!-- <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+          <ion-item>
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input formControlName="username"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input formControlName="password" type="password"></ion-input>
+          </ion-item>
+          <ion-button type="submit" expand="block" [disabled]="!loginForm.valid">Ingresar</ion-button>
+        </form> -->
+        <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+          <ion-item>
+            <ion-input aria-label="Usuario" formControlName="username"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input aria-label="Contraseña" formControlName="password" type="password"></ion-input>
+          </ion-item>
+          <ion-button type="submit" expand="block" [disabled]="!loginForm.valid">Ingresar</ion-button>
+        </form>
+
+      </ion-card-content>
+      <ion-ripple-effect></ion-ripple-effect>
+    </ion-card>
+  </div>
 </ion-content>
 
 
+<!-- Con este quitamos las alvertencias de consola pero se quita el efecto del  -->
 
