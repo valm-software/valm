@@ -84,7 +84,10 @@
               "browserTarget": "app:build:production"
             },
             "development": {
-              "browserTarget": "app:build:development"
+              "browserTarget": "app:build:development",
+              "ssl": true,
+              "sslKey": "localhost-key.pem",
+              "sslCert": "localhost.pem"
             },
             "ci": {
               "progress": false

@@ -79,6 +79,7 @@ export class MenuComponent implements OnInit, OnDestroy {
     'USUARIOS': 'person',
     'CLIENTES': 'people',
     'VENTAS': 'cash',
+    'PROVEEDORES': 'business',
     'CATALOGO': 'list',
     'LOGOUT': 'log-out',
     'LOGIN': 'log-in'

@@ -28,6 +28,9 @@ import { EntregaComponent } from './components/entrega/entrega.component';
 import { VentaRoutingModule } from './components/venta/venta-routing.module';
 import { VentaComponent } from './components/venta/venta.component';
 
+import { ProveedorRoutingModule } from './components/proveedor/proveedor-routing.module';
+import { ProveedorComponent } from './components/proveedor/proveedor.component';
+
 
 import { UsuarioRoutingModule } from './components/usuario/usuario-routing.module';
 import { UsuarioComponent } from './components/usuario/usuario.component';
@@ -37,7 +40,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 
 @NgModule({
-  declarations: [AppComponent,MenuComponent,ClienteComponent, CatalogoComponent, CobroComponent, EntregaComponent, VentaComponent, UsuarioComponent],
+  declarations: [AppComponent,MenuComponent,ClienteComponent, CatalogoComponent, CobroComponent, EntregaComponent, VentaComponent, UsuarioComponent, ProveedorComponent],
   imports: [BrowserModule,
             IonicModule.forRoot(),
             AppRoutingModule,
@@ -51,7 +54,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
             EntregaRoutingModule,
             UsuarioRoutingModule,
             VentaRoutingModule,
-            CatalogoRoutingModule
+            CatalogoRoutingModule,
+            ProveedorRoutingModule
           ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
               { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true } ],
